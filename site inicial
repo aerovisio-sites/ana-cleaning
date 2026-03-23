@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AS Cleaning Services | Ana Santos</title>
+  <meta name="description" content="Professional commercial and domestic cleaning services in Eastbourne. Reliable, professional and trusted cleaning for homes and businesses." />
+  <style>
+    :root {
+      --navy: #0f2f63;
+      --navy-2: #173d7d;
+      --gold: #c79a43;
+      --gold-2: #e3c27b;
+      --bg: #f5f7fb;
+      --text: #18345f;
+      --muted: #5f7397;
+      --white: #ffffff;
+      --shadow: 0 14px 35px rgba(15, 47, 99, 0.12);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    .container {
+      width: min(1140px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: var(--navy);
+      color: #fff;
+      text-align: center;
+      padding: 10px 16px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,0.88);
+      border-bottom: 1px solid rgba(15,47,99,0.08);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 14px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      color: var(--navy);
+    }
+
+    .brand-logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--navy), var(--navy-2));
+      display: grid;
+      place-items: center;
+      color: white;
+      font-weight: 900;
+      box-shadow: var(--shadow);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .nav-links a:hover { color: var(--navy); }
+
+    .nav-cta {
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-2));
+      color: #1d2740;
+      font-weight: 800;
+      box-shadow: 0 10px 24px rgba(199,154,67,0.28);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top right, rgba(199,154,67,0.18), transparent 28%),
+        linear-gradient(135deg, #eef3fb 0%, #f8fbff 55%, #ffffff 100%);
+      padding: 74px 0 54px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(15,47,99,0.08);
+      color: var(--navy);
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      margin: 0 0 12px;
+      font-size: clamp(38px, 5vw, 66px);
+      line-height: 1.02;
+      color: var(--navy);
+      letter-spacing: -1.2px;
+    }
+
+    .hero h1 span { color: var(--gold); }
+
+    .hero p {
+      margin: 0 0 24px;
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 640px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .btn {
+      padding: 15px 22px;
+      border-radius: 999px;
+      font-weight: 800;
+      transition: transform .18s ease, box-shadow .18s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--navy), var(--navy-2));
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .btn-secondary {
+      background: #fff;
+      color: var(--navy);
+      border: 1px solid rgba(15,47,99,0.12);
+      box-shadow: 0 10px 22px rgba(15,47,99,0.08);
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .badge {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid rgba(15,47,99,0.10);
+      color: var(--navy);
+      font-size: 14px;
+      font-weight: 800;
+      box-shadow: 0 8px 18px rgba(15,47,99,0.06);
+    }
+
+    .hero-card {
+      position: relative;
+      background: linear-gradient(160deg, #0f2f63 0%, #15366c 52%, #1e4a97 100%);
+      color: #fff;
+      border-radius: 28px;
+      padding: 30px;
+      box-shadow: 0 24px 50px rgba(15,47,99,0.26);
+      overflow: hidden;
+      min-height: 520px;
+    }
+
+    .hero-card::before,
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .hero-card::before {
+      width: 320px;
+      height: 320px;
+      top: -130px;
+      right: -90px;
+    }
+
+    .hero-card::after {
+      width: 260px;
+      height: 260px;
+      bottom: -120px;
+      left: -90px;
+    }
+
+    .hero-card-top {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .hero-logo-box {
+      width: 66px;
+      height: 66px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.12);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 26px;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.12);
+    }
+
+    .hero-card h2 {
+      margin: 0;
+      font-size: 30px;
+      line-height: 1.05;
+    }
+
+    .hero-card small {
+      display: block;
+      color: rgba(255,255,255,0.82);
+      margin-top: 4px;
+      font-size: 15px;
+    }
+
+    .hero-panel {
+      position: relative;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 20px;
+      padding: 18px;
+      margin-top: 16px;
+    }
+
+    .hero-panel strong {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 14px;
+      letter-spacing: .3px;
+      text-transform: uppercase;
+      color: var(--gold-2);
+    }
+
+    .hero-panel p {
+      margin: 0;
+      color: rgba(255,255,255,0.92);
+      font-size: 16px;
+    }
+
+    .hero-contact-list {
+      position: relative;
+      display: grid;
+      gap: 12px;
+      margin: 18px 0 0;
+    }
+
+    .hero-contact-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      background: rgba(255,255,255,0.08);
+      padding: 14px 16px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.08);
+      font-size: 15px;
+    }
+
+    .hero-contact-item span:last-child {
+      color: rgba(255,255,255,0.9);
+      text-align: right;
+    }
+
+    section {
+      padding: 72px 0;
+    }
+
+    .section-head {
+      text-align: center;
+      margin-bottom: 38px;
+    }
+
+    .section-head h2 {
+      margin: 0 0 10px;
+      font-size: clamp(30px, 4vw, 42px);
+      line-height: 1.05;
+      color: var(--navy);
+    }
+
+    .section-head p {
+      margin: 0 auto;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 28px 18px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(15,47,99,0.06);
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 42px rgba(15,47,99,0.14);
+    }
+
+    .service-icon {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 16px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(15,47,99,0.08), rgba(199,154,67,0.18));
+      display: grid;
+      place-items: center;
+      font-size: 30px;
+    }
+
+    .service-card h3 {
+      margin: 0 0 8px;
+      font-size: 19px;
+      color: var(--navy);
+    }
+
+    .service-card p {
+      margin: 0;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .why {
+      background: linear-gradient(180deg, #eef3fb 0%, #f7f9fd 100%);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .why-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(15,47,99,0.06);
+    }
+
+    .why-card h3 {
+      margin: 0 0 10px;
+      color: var(--navy);
+      font-size: 20px;
+    }
+
+    .why-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 0.9fr;
+      gap: 26px;
+      align-items: stretch;
+    }
+
+    .about-card,
+    .contact-card,
+    .qr-card,
+    .cta-strip {
+      background: #fff;
+      border-radius: 26px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(15,47,99,0.06);
+    }
+
+    .about-card {
+      padding: 34px;
+    }
+
+    .about-card h3 {
+      margin: 0 0 14px;
+      font-size: 30px;
+      line-height: 1.1;
+      color: var(--navy);
+    }
+
+    .about-card p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .stats-box {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      padding: 24px;
+      background: linear-gradient(160deg, #0f2f63 0%, #1e4a97 100%);
+      color: #fff;
+      border-radius: 26px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .stats-box::before {
+      content: "";
+      position: absolute;
+      inset: auto -50px -60px auto;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .stat {
+      position: relative;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 28px;
+      margin-bottom: 6px;
+      color: var(--gold-2);
+    }
+
+    .stat span {
+      font-size: 14px;
+      color: rgba(255,255,255,0.88);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .contact-card {
+      padding: 28px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: #f7f9fd;
+      border: 1px solid rgba(15,47,99,0.06);
+      color: var(--text);
+    }
+
+    .contact-row strong {
+      color: var(--navy);
+    }
+
+    .qr-card {
+      padding: 22px;
+      text-align: center;
+    }
+
+    .qr-placeholder {
+      aspect-ratio: 1 / 1;
+      width: 100%;
+      max-width: 220px;
+      margin: 0 auto 14px;
+      border-radius: 22px;
+      background:
+        linear-gradient(135deg, #f2f5fb, #ffffff);
+      border: 2px dashed rgba(15,47,99,0.16);
+      display: grid;
+      place-items: center;
+      color: var(--muted);
+      font-weight: 800;
+      padding: 16px;
+    }
+
+    .cta-strip {
+      margin-top: 28px;
+      padding: 24px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      background: linear-gradient(135deg, #fff6e8, #ffffff);
+    }
+
+    .cta-strip strong {
+      display: block;
+      font-size: 24px;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .cta-strip span {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .site-footer {
+      background: linear-gradient(135deg, #0d2855, #153b78);
+      color: #fff;
+      text-align: center;
+      padding: 26px 16px;
+      font-weight: 800;
+      letter-spacing: .4px;
+    }
+
+    .floating-whatsapp {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 80;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-size: 28px;
+      box-shadow: 0 18px 30px rgba(34,197,94,0.34);
+    }
+
+    @media (max-width: 1080px) {
+      .services-grid { grid-template-columns: repeat(3, 1fr); }
+      .hero-grid,
+      .about-grid,
+      .contact-grid,
+      .why-grid { grid-template-columns: 1fr; }
+      .hero-card { min-height: auto; }
+    }
+
+    @media (max-width: 760px) {
+      .nav { flex-wrap: wrap; justify-content: center; }
+      .nav-links { flex-wrap: wrap; justify-content: center; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-box { grid-template-columns: 1fr 1fr; }
+      .cta-strip { flex-direction: column; text-align: center; }
+    }
+
+    @media (max-width: 520px) {
+      .hero { padding-top: 56px; }
+      .services-grid,
+      .stats-box { grid-template-columns: 1fr; }
+      .hero-actions { flex-direction: column; }
+      .btn { width: 100%; }
+      .contact-row,
+      .hero-contact-item { flex-direction: column; align-items: flex-start; }
+      .contact-row span:last-child,
+      .hero-contact-item span:last-child { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">Reliable • Professional • Trusted</div>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#top" class="brand">
+        <div class="brand-logo">AS</div>
+        <div>
+          <div>AS Cleaning Services</div>
+          <small style="display:block;color:#6a7da0;font-weight:700;">Eastbourne</small>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a class="nav-cta" href="https://wa.me/447583696624" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Commercial & Domestic Cleaning</div>
+          <h1>Professional cleaning that keeps your <span>space spotless</span>.</h1>
+          <p>
+            Clean, reliable and professional service for homes and businesses in Eastbourne.
+            A simple, trustworthy website for a business that is ready to grow.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/447583696624" target="_blank" rel="noopener">Message on WhatsApp</a>
+            <a class="btn btn-secondary" href="mailto:anasantoscleaner@gmail.com">Send an Email</a>
+          </div>
+
+          <div class="hero-badges">
+            <span class="badge">Offices</span>
+            <span class="badge">Clinics</span>
+            <span class="badge">Warehouses</span>
+            <span class="badge">Factories</span>
+            <span class="badge">Domestic</span>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-card-top">
+            <div class="hero-logo-box">AS</div>
+            <div>
+              <h2>Ana Santos</h2>
+              <small>Certified Professional Cleaner • Supervisor Level 5</small>
+            </div>
+          </div>
+
+          <div class="hero-panel">
+            <strong>AS Cleaning Services</strong>
+            <p>
+              Quality cleaning with a focus on trust, consistency and attention to detail.
+            </p>
+          </div>
+
+          <div class="hero-contact-list">
+            <div class="hero-contact-item">
+              <span><strong>Phone</strong></span>
+              <span>+44 7583 696624</span>
+            </div>
+            <div class="hero-contact-item">
+              <span><strong>Email</strong></span>
+              <span>anasantoscleaner@gmail.com</span>
+            </div>
+            <div class="hero-contact-item">
+              <span><strong>Location</strong></span>
+              <span>Eastbourne</span>
+            </div>
+            <div class="hero-contact-item">
+              <span><strong>Availability</strong></span>
+              <span>WhatsApp available</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <h2>Cleaning services for homes and businesses</h2>
+          <p>
+            A clean and professional website should show clearly what Ana offers and make it easy for customers to get in touch.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-icon">🏢</div>
+            <h3>Offices</h3>
+            <p>Professional cleaning for workspaces, desks, common areas and meeting rooms.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">🏥</div>
+            <h3>Clinics</h3>
+            <p>Clean, hygienic and well-presented environments for healthcare-related spaces.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">📦</div>
+            <h3>Warehouses</h3>
+            <p>Dependable cleaning support for storage areas, floors and operational spaces.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">🏭</div>
+            <h3>Factories</h3>
+            <p>Reliable service for industrial environments that need consistency and care.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">🏠</div>
+            <h3>Domestic</h3>
+            <p>Friendly and detail-focused home cleaning for a fresher and more comfortable space.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="why">
+      <div class="container">
+        <div class="section-head">
+          <h2>Why customers choose Ana</h2>
+          <p>
+            This section helps build trust fast. For small business sites, trust is one of the most important things.
+          </p>
+        </div>
+
+        <div class="why-grid">
+          <article class="why-card">
+            <h3>Reliable service</h3>
+            <p>Customers want someone dependable, punctual and consistent. This message should always be visible.</p>
+          </article>
+          <article class="why-card">
+            <h3>Professional standards</h3>
+            <p>A cleaner image, a stronger first impression and a more credible business presence online.</p>
+          </article>
+          <article class="why-card">
+            <h3>Easy contact</h3>
+            <p>WhatsApp, email and location are shown clearly so customers can contact Ana without confusion.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container about-grid">
+        <div class="about-card">
+          <h3>About Ana Santos</h3>
+          <p>
+            Ana Santos provides professional cleaning services in Eastbourne with a strong focus on quality, trust and consistency.
+          </p>
+          <p>
+            This premium one-page website is ideal for local businesses that want something clean, modern and affordable without paying for a large custom site.
+          </p>
+          <p>
+            It is also a strong template for future clients such as cleaners, salons, cafés, clinics and other local businesses.
+          </p>
+        </div>
+
+        <div class="stats-box">
+          <div class="stat">
+            <strong>5</strong>
+            <span>Main service types highlighted clearly on the page</span>
+          </div>
+          <div class="stat">
+            <strong>24/7</strong>
+            <span>Easy customer contact through WhatsApp and email</span>
+          </div>
+          <div class="stat">
+            <strong>1 Page</strong>
+            <span>Simple structure that works very well for low-cost business websites</span>
+          </div>
+          <div class="stat">
+            <strong>Mobile</strong>
+            <span>Responsive layout designed to look good on phone and desktop</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head">
+          <h2>Contact Ana today</h2>
+          <p>
+            A simple business website should make contact immediate. That is why the WhatsApp button, email and location are all easy to find.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3 style="margin:0 0 8px;font-size:28px;color:var(--navy);">Get in touch</h3>
+            <p style="margin:0;color:var(--muted);font-size:16px;">Professional cleaning services in Eastbourne.</p>
+
+            <div class="contact-list">
+              <div class="contact-row">
+                <span><strong>Phone</strong></span>
+                <span>+44 7583 696624</span>
+              </div>
+              <div class="contact-row">
+                <span><strong>Email</strong></span>
+                <span>anasantoscleaner@gmail.com</span>
+              </div>
+              <div class="contact-row">
+                <span><strong>Location</strong></span>
+                <span>Eastbourne</span>
+              </div>
+              <div class="contact-row">
+                <span><strong>WhatsApp</strong></span>
+                <span>Available</span>
+              </div>
+            </div>
+          </div>
+
+          <aside class="qr-card">
+            <div class="qr-placeholder">Place QR image here<br>contact-qr.png</div>
+            <strong style="display:block;color:var(--navy);font-size:18px;">Scan to contact on WhatsApp</strong>
+            <p style="margin:8px 0 0;color:var(--muted);font-size:14px;">You can replace the placeholder with Ana's QR image later.</p>
+          </aside>
+        </div>
+
+        <div class="cta-strip">
+          <div>
+            <strong>Quality cleaning • every time</strong>
+            <span>Ideal layout for a local cleaner who needs a simple, trusted online presence.</span>
+          </div>
+          <a class="btn btn-primary" href="https://wa.me/447583696624" target="_blank" rel="noopener">Request a quote</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    AS Cleaning Services • Reliable • Professional • Trusted
+  </footer>
+
+  <a class="floating-whatsapp" href="https://wa.me/447583696624" target="_blank" rel="noopener" aria-label="WhatsApp">✆</a>
+</body>
+</html>
